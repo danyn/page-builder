@@ -1,0 +1,15 @@
+<div class="pb-inner">
+  <style>.page__builder{width:100%}</style>
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h4 class="h2">{{ section.settings.title | escape }}</h4>
+    </div>
+  {% endif %}
+
+  <div class="custom-content">
+    {% for block in section.blocks %}
+
+      <div class="page__builder page__builder__item--{{block.id}} " {{ block.shopify_attributes }}>
+        <div class="custom__item-inner custom__item-inner--{{ block.type }}">
+          {% case block.type %}
+          
