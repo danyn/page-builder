@@ -1,5 +1,5 @@
 var   gulp = require('gulp'),
-      concat = require('gulp-concat'),
+      concat = require('gulp-concat');
     
 
 
@@ -19,13 +19,13 @@ var templating  = [
 
 //gulp.task('name', function(){});
 
-gulp.task('schema', function(){
+gulp.task('build_schema', function(){
     return gulp.src(schemaJSON)
           .pipe(concat('page-builder.liquid'))
           .pipe(gulp.dest('project/build'));
 });
 
-gulp.task('template', function(){
+gulp.task('build_template', function(){
     return gulp.src(templating)
           .pipe(concat('page-builder-snippet.liquid'))
           .pipe(gulp.dest('project/build'));
@@ -33,13 +33,13 @@ gulp.task('template', function(){
 
 
 gulp.task('watch' ,function(){
-      gulp.watch(schemaJSON,['schema']);
-      gulp.watch(templating,['template']);
+      gulp.watch(schemaJSON,['build_schema']);
+      gulp.watch(templating,['build_template']);
 
 });
 
 
 
-gulp.task('default', ['schema','template','watch']);
+gulp.task('default', ['build_schema','build_template','watch']);
 
 

@@ -1,0 +1,47 @@
+<div class="pb-inner">
+  <style>.page__builder{width:100%}</style>
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h4 class="h2">{{ section.settings.title | escape }}</h4>
+    </div>
+  {% endif %}
+
+  <div class="custom-content">
+    {% for block in section.blocks %}
+
+      <div class="page__builder page__builder__item--{{block.id}} " {{ block.shopify_attributes }}>
+        <div class="custom__item-inner custom__item-inner--{{ block.type }}">
+          {% case block.type %}
+          
+            {%when 'pb_txt'%}
+                <div class="feature-row__item feature-row__text align--center">
+                  {% if block.settings.title != blank %}
+                    <h2 class="h3">{{ block.settings.title | escape }}</h2>
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    <div class="rte-setting featured-row__subtext">{{ block.settings.text }}</div>
+                  {% endif %}
+                  {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                    <a href="{{ block.settings.button_link }}" class="btn">
+                      {{ block.settings.button_label | escape }}
+                    </a>
+                  {% endif %}
+                </div>     
+<!--  end when pb_text        -->
+          
+          {% endcase %}
+<!--					for blocktype -->
+        </div>
+<!--        div.custom__item-inner-->
+      </div>
+<!--      div.page__builder-->
+
+    {% endfor %}
+  </div>
+<!--  div.custom-content-->
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+</div>
+<!--div.pb-inner-->

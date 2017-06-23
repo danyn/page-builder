@@ -1,0 +1,15 @@
+            {%when 'pb_txt'%}
+                <div class="feature-row__item feature-row__text align--center">
+                  {% if block.settings.title != blank %}
+                    <h2 class="h3">{{ block.settings.title | escape }}</h2>
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    <div class="rte-setting featured-row__subtext">{{ block.settings.text }}</div>
+                  {% endif %}
+                  {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                    <a href="{{ block.settings.button_link }}" class="btn">
+                      {{ block.settings.button_label | escape }}
+                    </a>
+                  {% endif %}
+                </div>     
+<!--  end when pb_text        -->

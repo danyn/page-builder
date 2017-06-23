@@ -1,3 +1,12 @@
+<!-- block templates and blocktype iterator  -->
+{%include 'pb-snippet'%}
+
+{% schema %}
+{
+    "name": "Page Builder",
+    "class": "index-section",
+    "blocks": [
+			
 {
 				"type": "pb_txt",
         "name": "Text with a button",
@@ -29,3 +38,18 @@
 			]
 	  }
 					
+
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+
+.collection-grid-item__overlay {
+			    background-size: 73% !important;
+    			background-position: center center !important;
+}
+
+
+{% endstylesheet %}
