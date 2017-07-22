@@ -1,3 +1,3 @@
 # Page Builder for Debut theme on Shopify
 
-All this does is take the sections from the sections folder in Debut and turn them into one section with blocks This section can be used to create identical static sections  for individual pages by creating a new template to point to the section.  All the configuration information from the static sections should be written to Config/settings_data.json
+All this does is take the sections from the sections folder in Debut and turn them into one section with blocks. This section can be used to build pages with the same kind of pagebuilder that Debut has for the homepage.  To do so currently you would have to manually create a new template and then tell it to use this section.  What this does is create identical static sections, where information for this individual pages is written into the one and only Config/settings_data.json - which is where all the customizations for the homepage are written by default.
